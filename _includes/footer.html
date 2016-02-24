@@ -42,6 +42,18 @@
             </a>
           </li>
           {% endif %}
+          {% if site.linkedin %}
+          <li>
+            <a href="https://www.linkedin.com/in/{{ site.linkedin }}">
+              <span class="icon icon--linkedin">
+                <svg viewBox="0 0 32 32">
+                  <path fill="#828282" d="M26.625 0h-21.25c-2.956 0-5.375 2.419-5.375 5.375v21.25c0 2.956 2.419 5.375 5.375 5.375h21.25c2.956 0 5.375-2.419 5.375-5.375v-21.25c0-2.956-2.419-5.375-5.375-5.375zM12 26h-4v-14h4v14zM10 10c-1.105 0-2-0.895-2-2s0.895-2 2-2 2 0.895 2 2-0.895 2-2 2zM26 26h-4v-8c0-1.105-0.895-2-2-2s-2 0.895-2 2v8h-4v-14h4v2.483c0.825-1.133 2.086-2.483 3.5-2.483 2.485 0 4.5 2.239 4.5 5v9z"/>
+                </svg>
+              </span>
+              <span class="username">{{ site.linkedin }}</span>
+            </a>
+          </li>
+          {% endif %}
         </ul>
       </div>
 
@@ -49,7 +61,5 @@
         <p class="text">{{ site.description }}</p>
       </div>
     </div>
-
   </div>
-
 </footer>
