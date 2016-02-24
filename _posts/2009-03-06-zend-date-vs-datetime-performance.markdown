@@ -116,29 +116,27 @@ to only 14.87 requests per second with Zend\_Date
  
 ~~~
  <?php 
- 
  date_default_timezone_set('America/New_York');
  
  $dbDate = date("Y-m-d H:i:s");
- 
  $date = new DateTime($dbDate);
  echo $date->format('m/d/Y h:iA');
 ~~~
- 
+{: .language-php}
+
  datebm_zend.php 
  
 ~~~
- <?php 
- 
+ <?php  
  date_default_timezone_set('America/New_York');
- 
- $dbDate = date("Y-m-d H:i:s");
  
  function __autoload ($class)
  {
      $file = str_replace("_", "/", $class) . ".php";
      include_once($file);
  }
+ 
+ $dbDate = date("Y-m-d H:i:s");
  Zend_Date::setOptions(array('format_type' => 'php'));
  $date = new Zend_Date($dbDate, Zend_Date::ISO_8601);
  echo $date->get('m/d/Y h:iA');
