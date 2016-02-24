@@ -11,7 +11,7 @@ to hunt down the issue. In this case, the problem was being caused by using Zend
 
 ab Results of PHP's DateTime
 
-```
+~~~
 #ab -n 100 -c 10 http://localhost/test/datebm_php.php
 This is ApacheBench, Version 2.3 <$Revision: 655654 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
@@ -56,11 +56,11 @@ Percentage of the requests served within a certain time (ms)
  98%     30
  99%     38
 100%     38 (longest request)
-```
+~~~
 
 ab Results using Zend_Date
 
-```
+~~~
 #ab -n 100 -c 10 http://localhost/test/datebm_zend.php
 This is ApacheBench, Version 2.3 <$Revision: 655654 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
@@ -105,7 +105,7 @@ Percentage of the requests served within a certain time (ms)
   98%   1187
   99%   1503
  100%   1503 (longest request)
-```
+~~~
  
 As you can see, using Zend\_Date is significantly slower going from 613.44 requests per second with PHP's DateTime
 to only 14.87 requests per second with Zend\_Date
@@ -114,7 +114,7 @@ to only 14.87 requests per second with Zend\_Date
  
  datebm_php.php
  
-```php
+~~~
  <?php 
  
  date_default_timezone_set('America/New_York');
@@ -123,11 +123,11 @@ to only 14.87 requests per second with Zend\_Date
  
  $date = new DateTime($dbDate);
  echo $date->format('m/d/Y h:iA');
-```
+~~~
  
  datebm_zend.php 
  
-```php
+~~~
  <?php 
  
  date_default_timezone_set('America/New_York');
@@ -142,7 +142,8 @@ to only 14.87 requests per second with Zend\_Date
  Zend_Date::setOptions(array('format_type' => 'php'));
  $date = new Zend_Date($dbDate, Zend_Date::ISO_8601);
  echo $date->get('m/d/Y h:iA');
-```
+~~~
+{: .language-php}
  
 
  

@@ -10,5 +10,5 @@ github_username:  jimhartford
 linkedin: jimhartford
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 
